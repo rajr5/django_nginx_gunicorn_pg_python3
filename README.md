@@ -34,9 +34,24 @@ docker-compose up
 
 *Other useful commnads:*
 ```
-docker-compose run web /bin/bash
-docker-compose run web django-admin startproject mysite
+docker-compose run web django-admin.py startproject mysite .
+docker-compose run web python manage.py syncdb
 docker-compose run web python manage.py makemigrations
 docker-compose run web python manage.py migrate
-docker-compose run web python manage.py syncdb
+docker-compose run web /bin/bash
+docker ps
+docker-compose ps
+docker-compose stop
+```
+#### Modify DB file in django settings
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'HOST': 'db',
+        'PORT': 5432,
+    }
+}
 ```
