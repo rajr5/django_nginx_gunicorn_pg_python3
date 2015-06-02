@@ -1,7 +1,7 @@
 # django_nginx_gunicorn_pg_python3
 Docker container skeleton for building a Python 3 django container. Make sure that docker and docker-compose are installed.
 
-## This structure produdes a skeleton docker structure for running three containers:
+#### This structure produdes a skeleton docker structure for running three containers:
 1. ngnix proxy (linked to python container)
 2. Python:3.4 environment running gunicorn (linked to the postgres container)
 3. Postgres database
