@@ -35,14 +35,18 @@ docker-compose up
 *Other useful commnads:*
 ```
 docker-compose run web django-admin.py startproject mysite .
-docker-compose run web python manage.py syncdb
-docker-compose run web python manage.py makemigrations
-docker-compose run web python manage.py migrate
+docker-compose run web python mysite/manage.py syncdb
+docker-compose run web python mysite/manage.py makemigrations
+docker-compose run web python mysite/manage.py migrate
 docker-compose run web /bin/bash
 docker ps
 docker-compose ps
 docker-compose stop
 ```
+*The Dockerfile can be modified to change the working directory after the project is made so that the working directory is in the actual mysite folder and the docker-compose commands will execute directly from that directory.*
+
+*Your project files can also be added directly to the current working folder on your computer and the site does not have to be from scratch*
+
 #### Modify DB file in django settings
 ```
 DATABASES = {
