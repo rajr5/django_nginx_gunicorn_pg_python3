@@ -14,7 +14,7 @@ web:
   command: gunicorn extended_events.wsgi -b 0.0.0.0:9000
   volumes:
     # format: external:internal[:mode]
-    - .:/events
+    - .:/project_code
   ports:
     # format: external:internal (i.e. the world sees the external port)
     - "8000:9000"
